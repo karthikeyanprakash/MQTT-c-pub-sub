@@ -33,6 +33,7 @@ POSSIBILITY OF SUCH DAMAGE.
 #include <errno.h>
 #include <fcntl.h>
 #include <assert.h>
+#include <sys/timer.h>
 
 
 #include <arpa/inet.h>
