@@ -48,21 +48,21 @@ POSSIBILITY OF SUCH DAMAGE.
 #include <unistd.h> // for sleep function
 
 const char *client_name = "default_pub"; 	// -c
-const char *ip_addr     = "127.0.0.1";		// -i
+const char *ip_addr     = "37.187.106.16";   // -i
 uint32_t    port        = 1883;			// -p
-const char *topic       = "hello/world";	// -t
+const char *topic       = "smartron";	// -t
 uint32_t    count       = 10;			// -n
 
 void parse_options(int argc, char** argv);
 
 int main (int argc, char** argv)
 {   
-    puts("MQTT PUB Test Code");
-    if(argc > 1) {
-	parse_options(argc, argv);
-    }
+   // puts("MQTT PUB Test Code");
+   // if(argc > 1) {
+//	parse_options(argc, argv);
+   // }
 
-//  mqtt_broker_handle_t *broker = mqtt_connect("default_pub","127.0.0.1", 1883);
+    //mqtt_broker_handle_t *broker = mqtt_connect("default_pub","127.0.0.1", 1883);
     mqtt_broker_handle_t *broker = mqtt_connect(client_name, ip_addr, port);
 
     
@@ -86,7 +86,7 @@ int main (int argc, char** argv)
     mqtt_disconnect(broker);
 }
 
-void parse_options(int argc, char** argv)
+/*void parse_options(int argc, char** argv)
 {
    for(int i = 1; i < argc; ++i) {
 	if(strcmp("-c",argv[i]) == 0) {
@@ -109,7 +109,7 @@ void parse_options(int argc, char** argv)
 		printf("count:%s ",argv[++i]);
 		count = atoi(argv[i]);
 	}
-   }
-   puts("");
-}
+   }*/
+   //puts("");
+//}
 

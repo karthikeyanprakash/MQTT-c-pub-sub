@@ -47,21 +47,21 @@ POSSIBILITY OF SUCH DAMAGE.
 
 
 const char *client_name = "default_sub"; 	// -c
-const char *ip_addr     = "127.0.0.1";		// -i
+const char *ip_addr     = "37.187.106.16";		// -i
 uint32_t    port        = 1883;			// -p
-const char *topic       = "hello/world";	// -t
+const char *topic       = "smartron";	// -t
 
 void parse_options(int argc, char** argv);
 
 int main (int argc, char** argv)
 {
-    puts("MQTT SUB Test Code");
+    /*puts("MQTT SUB Test Code");
 
     if(argc > 1) {
 	parse_options(argc, argv);
-    }
+    }*/
 
-//  mqtt_broker_handle_t *broker = mqtt_connect("default_sub","127.0.0.1", 1883);
+    //mqtt_broker_handle_t *broker = mqtt_connect("default_sub","37.187.106.16", 1883);
     mqtt_broker_handle_t *broker = mqtt_connect(client_name, ip_addr, port);
 
     if(broker == 0) {
@@ -83,7 +83,7 @@ int main (int argc, char** argv)
     return 0;
 }
 
-void parse_options(int argc, char** argv)
+/*void parse_options(int argc, char** argv)
 {
    for(int i = 1; i < argc; ++i) {
 	if(strcmp("-c",argv[i]) == 0) {
@@ -102,8 +102,8 @@ void parse_options(int argc, char** argv)
 		printf("topic:%s ",argv[++i]);
 		topic = argv[i];
 	}
-   }
-   puts("");
-}
+   }*/
+   
+
 
 
