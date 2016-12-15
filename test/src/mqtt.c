@@ -271,7 +271,7 @@ int SetSocketTimeout(int connectSocket, int milliseconds)
 void mqtt_display_message(mqtt_broker_handle_t *broker, int (*print)(int))
 {
     uint8_t buffer[128];
-    SetSocketTimeout(broker->socket, 30000000);
+    SetSocketTimeout(broker->socket, 30000);
 
     while(1) {
         // wait for next message
