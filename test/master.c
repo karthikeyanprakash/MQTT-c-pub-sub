@@ -79,15 +79,15 @@ int main ()
  	printf("Please wait while server establishes connection.....\n");
 	mqtt_broker_handle_t* broker = mqtt_connection();
 	
-	if( timeout(10) == 1 )
+	/*if( timeout(10) == 1 )
 	{
         	printf("Time Out\n");
        		return 0;
-	}
-	else
-	{
-	printf("Check Broker connection");
-	}
+	}*/
+	//else
+	//{
+	//printf("Check Broker connection");
+	//}
 	sleep(1);
 	publish_mqtt(broker);
 	subscribe_mqtt(broker);
