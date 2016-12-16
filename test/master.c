@@ -85,19 +85,16 @@ int main ()
 	{
         	printf("Time Out\n");
        		return 0;
-<<<<<<< HEAD
-	}*/
+	}
 	//else
 	//{
 	//printf("Check Broker connection");
-	//}
-=======
+
 	}
 	else
 	{
 	printf("Check Broker connection");
 	}*/
->>>>>>> timeout
 	sleep(1);
 	publish_mqtt(broker);
 	subscribe_mqtt(broker);
