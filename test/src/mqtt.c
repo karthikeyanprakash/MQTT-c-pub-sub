@@ -104,8 +104,7 @@ typedef struct fixed_header_t
     uint16_t     connect_msg_t      : 4;
     uint16_t     remaining_length   : 8;    
 }fixed_header_t;
-
-
+ 
 
 mqtt_broker_handle_t * mqtt_connect(const char* client, const char * server_ip, uint32_t port)
 {
@@ -268,9 +267,9 @@ int SetSocketTimeout(int connectSocket, int milliseconds)
     return setsockopt (connectSocket, SOL_SOCKET, SO_RCVTIMEO, (char *)&tv, sizeof tv);
 }
 
-void mqtt_display_message(mqtt_broker_handle_t *broker, int (*print)(int))
-{
-    uint8_t buffer[128];
+void mqtt_display_message(mqtt_broker_handle_t *broker, int (*print)(int), int *a)
+{  
+  uint8_t buffer[128];
     SetSocketTimeout(broker->socket, 30000);
 
     while(1) {
@@ -320,7 +319,8 @@ void mqtt_display_message(mqtt_broker_handle_t *broker, int (*print)(int))
                     }
                 }
                 for ( ; i < sz; ++i) { 
-                    print(buffer[i]);
+                    print(buffer[i]);	
+			a[i] = buffer[i];
                 }
                 print('\n');
                 return;
