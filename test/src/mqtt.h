@@ -43,7 +43,7 @@ void mqtt_disconnect(mqtt_broker_handle_t *broker);
 int mqtt_publish(mqtt_broker_handle_t *broker, const char *topic, const char *msg, QoS qos);
 
 int mqtt_subscribe(mqtt_broker_handle_t *broker, const char *topic, QoS qos);
-void mqtt_display_message(mqtt_broker_handle_t *broker, int (*print)(int));
+void mqtt_display_message(mqtt_broker_handle_t *broker, int (*print)(int), int *a);
 
 
 

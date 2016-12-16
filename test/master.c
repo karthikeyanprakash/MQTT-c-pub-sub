@@ -60,6 +60,7 @@ int publish_mqtt(mqtt_broker_handle_t* broker)
 int subscribe_mqtt(mqtt_broker_handle_t* broker)
 	{
  		int result = mqtt_subscribe(broker, topic1, QoS1);
+		int a,b;
     
    		 if(result != 1) {
        		 printf("failed to Subscribe");
@@ -68,7 +69,8 @@ int subscribe_mqtt(mqtt_broker_handle_t* broker)
 
     		while(1)
     	{
-        	mqtt_display_message(broker, &putchar);
+        	mqtt_display_message(broker, &putchar, &a);
+		printf("%d",a);
     	}
     		return 0;
 	}
@@ -83,11 +85,19 @@ int main ()
 	{
         	printf("Time Out\n");
        		return 0;
+<<<<<<< HEAD
 	}*/
 	//else
 	//{
 	//printf("Check Broker connection");
 	//}
+=======
+	}
+	else
+	{
+	printf("Check Broker connection");
+	}*/
+>>>>>>> timeout
 	sleep(1);
 	publish_mqtt(broker);
 	subscribe_mqtt(broker);
