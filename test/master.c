@@ -44,7 +44,7 @@ mqtt_broker_handle_t* mqtt_connection()
 
 int publish_mqtt(mqtt_broker_handle_t* broker)
 {
-	char msg[128] = "Test 2";
+	char msg[128] = "Hello message from thome API";
 
 	if(mqtt_publish(broker, topic3, msg, QoS1) == -1) 
 	{
