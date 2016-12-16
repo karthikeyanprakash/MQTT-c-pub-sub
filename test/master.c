@@ -70,7 +70,7 @@ int subscribe_mqtt(mqtt_broker_handle_t* broker)
     		while(1)
     	{
         	mqtt_display_message(broker, &putchar, &a);
-		putchar(&a);
+		printf("%d",a);
     	}
     		return 0;
 	}
