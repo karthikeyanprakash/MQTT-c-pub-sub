@@ -277,15 +277,15 @@ void mqtt_display_message(mqtt_broker_handle_t *broker, int (*print)(int), int *
         long sz = recv(broker->socket, buffer, sizeof(buffer), 0);
         //printf("message size is %ld\n",sz);        
         // if more than ack - i.e. data > 0
-        if (sz == 0)
-        {
+        //if (sz == 0)
+        //{
            /* Socket has been disconnected */
-           printf("\nSocket EOF\n");
+          // printf("\nSocket EOF\n");
 
-           close(broker->socket);
-           broker->socket = 0;
-           return;
-        }
+         //  close(broker->socket);
+         //  broker->socket = 0;
+          // return;
+       // }
 
         /*if(sz < 0)
         {
@@ -296,7 +296,7 @@ void mqtt_display_message(mqtt_broker_handle_t *broker, int (*print)(int), int *
         //   exit(0);
        // }*/
 
-        if(sz > 0) {
+       // if(sz > 0) {
             //printf("message size is %ld\n",sz);
             if( GET_MESSAGE(buffer[0]) == PUBLISH) {                
                 //printf("Got PUBLISH message with size %d\n", (uint8_t)buffer[1]);
@@ -327,8 +327,7 @@ void mqtt_display_message(mqtt_broker_handle_t *broker, int (*print)(int), int *
             }
         }
     }
-    
-}
+
 
 
 int mqtt_publish(mqtt_broker_handle_t *broker, const char *topic, const char *msg, QoS qos)
