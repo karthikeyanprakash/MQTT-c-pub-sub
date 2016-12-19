@@ -3,6 +3,7 @@ env = Environment(CC = 'gcc',
 		  LIBPATH=['/home/karthik/Karthik/paho.mqtt.c/build/output'],
 	          LIBS=['paho-mqtt3c'])
 env.Program('pub_paho', 'paho_pub.c')
+env.Program('sub_paho', 'paho_sub.c')
 
 
 
