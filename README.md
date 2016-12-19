@@ -14,8 +14,12 @@ note on OSX need
 
 cmake -G "Unix Makefiles" ..
 
-================
+================ Added by karthikeyanprakash ========================
 
 <Source>/test 
 -This folder contains PUB_SUB in same program
-- Added by karthikeyanprakash
+<Source>/test1
+-This folder contains Paho_mqtt test programs
+
+To test Paho Mqtt program donwload Paho.C.Library and add the library path, Source file path in SConstruct file.
+
