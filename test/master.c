@@ -44,9 +44,42 @@ mqtt_broker_handle_t* mqtt_connection()
 
 int publish_mqtt(mqtt_broker_handle_t* broker)
 {
-	char msg[128] = "Hello message from thome API";
+//char msg[1024];
 
-	if(mqtt_publish(broker, topic3, msg, QoS1) == -1) 
+char *msg = NULL;
+size_t size = 0;
+
+/* Open your_file in read-only mode */
+FILE *fp = fopen("test.txt", "r");
+
+/* Get the buffer size */
+fseek(fp, 0, SEEK_END); /* Go to end of file */
+size = ftell(fp); /* How many bytes did we pass ? */
+
+/* Set position of stream to the beginning */
+rewind(fp);
+
+/* Allocate the buffer (no need to initialize it with calloc) */
+msg = malloc((size + 1) * sizeof(*msg)); /* size + 1 byte for the \0 */
+
+// Print the array size
+printf("Size of the array is %lu\n", size);
+
+/* Read the file into the buffer */
+fread(msg, size, 1, fp); /* Read 1 chunk of size bytes from fp into buffer */
+
+/* NULL-terminate the buffer */
+msg[size] = '\0';
+
+/* Print it ! */
+//printf("%s\n", buffer);
+//msg[1024]= buffer[size];
+printf("%s", msg);
+
+
+	// "Hello message from thome API";
+
+	if(mqtt_publish(broker, topic3, msg, QoS0) == -1) 
 	{
             printf("publish failed\n");
         }
@@ -96,7 +129,7 @@ int main ()
 	printf("Check Broker connection");
 	}*/
 	sleep(1);
-	publish_mqtt(broker);
+	//publish_mqtt(broker);
 	subscribe_mqtt(broker);
 
 

@@ -1,0 +1,18 @@
+{
+   "response":"scan",
+   "code":"101",
+   "id":[
+      "31313131-3131-3131-3131-313131313131"
+   ],
+   "resources":[
+      {
+         "ruri":"/a/light",
+         "rt":[
+            "oic.core.light"
+         ],
+         "if":[
+            "oic.if.baseline"
+         ]
+      }
+   ]
+}
